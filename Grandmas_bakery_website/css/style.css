@@ -411,89 +411,538 @@ nav a {
 	}
 }
 
-.section-contact-form h1 {
-	margin: 50px 0 40px;
+/*Contact form*/
+/* normal state */
+.main-contact-form {
+	margin-top: 200px;
 }
 
-@media screen and (min-width: 1024px) {
-	.section-contact-form h1 {
-		margin: 120px 0 100px;
-		font-size: 50px;
-	}
-}
-
-.section-contact-form-inner {
-	padding: 18px 0 24px;
-	width: 80%;
-	margin: 0 auto;
-	border-bottom: 1px solid #747474;
-}
-
-@media screen and (min-width: 1024px) {
-	.section-contact-form-inner {
-		padding: 18px 0 70px;
-	}
-}
-
-.section-contact-form input,
-.section-contact-form textarea {
-	display: block;
-	width: 100%;
-	margin: 0 auto 12px;
+.form-section-header {
 	text-align: center;
-	font-weight: 700;
-	border: 1px solid #747474;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #dc9596;
 }
 
-@media screen and (min-width: 1024px) {
-	.section-contact-form input,
-	.section-contact-form textarea {
-		width: 60%;
-	}
+.main-contact-form .button {
+	background-color: #dc9596;
 }
 
-.section-contact-form input {
-	height: 28px;
+/* hover state */
+.main-contact-form .input:hover input,
+.main-contact-form .select:hover select,
+.main-contact-form .textarea:hover textarea,
+.main-contact-form .radio:hover i,
+.main-contact-form .checkbox:hover i {
+	border-color: #dc9596;
 }
 
-@media screen and (min-width: 1024px) {
-	.section-contact-form input {
-		height: 50px;
-		font-size: 16px;
-	}
+/* focus state */
+.main-contact-form .input input:focus,
+.main-contact-form .select select:focus,
+.main-contact-form .textarea textarea:focus,
+.main-contact-form .radio input:focus + i,
+.main-contact-form .checkbox input:focus + i{
+	border-color: #dc9596;
 }
 
-.section-contact-form textarea {
-	height: 200px;
-	padding: 10px 0 0;
-	font-size: 16px;
+
+/* checked state */
+.main-contact-form .radio input + i:after {
+	background-color: #dc9596;	
+}
+.main-contact-form .checkbox input + i:after {
+	color: #dc9596;
+}
+.main-contact-form .radio input:checked + i,
+.main-contact-form .checkbox input:checked + i, {
+	border-color: #dc9596;	
 }
 
-@media screen and (min-width: 1024px) {
-	.section-contact-form textarea {
-		height: 300px;
-		font-size: 20px;
-	}
+/* defaults */
+.main-contact-form {
+	margin: 0;
+	outline: none;
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	color: #666;
 }
-
-.section-contact-form button {
-	padding: 10px 42px;
-	background-color: #3F0002;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	font-size: 12px;
+.main-contact-form * {
+	margin: 0;
+	padding: 0;
+}
+.main-contact-form header {
+	display: block;
+	padding: 20px 30px;	
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: rgba(248,248,248,.9);
+	font-size: 25px;
+	font-weight: 300;
+	color: #232323;
+}
+.main-contact-form fieldset {
+	display: block;	
+	padding: 25px 30px 5px;
 	border: none;
-	border-radius: 3px;
-	margin: 20px 0 0;
+	background: rgba(255,255,255,.9);
+}
+.main-contact-form fieldset + fieldset {
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+.main-contact-form section {
+	margin-bottom: 20px;
+}
+.main-contact-form footer {
+	display: block;
+	padding: 15px 30px 25px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	background: rgba(248,248,248,.9);
+}
+.main-contact-form footer:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.main-contact-form a {
+	color: #dc9596;
+}
+.main-contact-form .label {
+	display: block;
+	margin-bottom: 6px;
+	line-height: 19px;
+}
+.main-contact-form .label.col {
+	margin: 0;
+	padding-top: 10px;
+}
+.main-contact-form .note {
+	margin-top: 6px;
+	padding: 0 1px;
+	font-size: 11px;
+	line-height: 15px;
+	color: #999;
+}
+.main-contact-form .input,
+.main-contact-form .select,
+.main-contact-form .textarea,
+.main-contact-form .radio,
+.main-contact-form .checkbox,
+.main-contact-form .button {
+	position: relative;
+	display: block;
+}
+.main-contact-form .input input,
+.main-contact-form .select select,
+.main-contact-form .textarea textarea {
+	display: block;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	height: 39px;
+	padding: 8px 10px;
+	outline: none;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 0;
+	background: #fff;
+	font: 15px/19px 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #404040;
+	appearance: normal;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
-@media screen and (min-width: 1024px) {
-	.section-contact-form button {
-		padding: 22px 80px;
-		font-size: 24px;
-		margin: 40px 0 0;
+
+/**/
+/* file inputs */
+/**/
+.main-contact-form .input-file .button {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	float: none;
+	height: 31px;
+	margin: 0;
+	padding: 0 20px;
+	font-size: 13px;
+	line-height: 31px;
+}
+.main-contact-form .input-file .button:hover {
+	box-shadow: none;
+}
+.main-contact-form .input-file .button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0;
+	font-size: 30px;
+	cursor: pointer;
+	opacity: 0;
+}
+
+
+/**/
+/* selects */
+/**/
+.main-contact-form .select i {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	width: 1px;
+	height: 11px;
+	background: #fff;
+	box-shadow: 0 0 0 12px #fff;
+}
+.main-contact-form .select i:after,
+.main-contact-form .select i:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+.main-contact-form .select i:after {
+	bottom: 0;
+	border-top: 4px solid #404040;
+}
+.main-contact-form .select i:before {
+	top: 0;
+	border-bottom: 4px solid #404040;
+}
+.main-contact-form .select-multiple select {
+	height: auto;
+}
+
+
+/* textareas */
+.main-contact-form .textarea textarea {
+	height: auto;
+	resize: none;
+}
+
+/* radios and checkboxes */
+.main-contact-form .radio,
+.main-contact-form .checkbox {
+	margin-bottom: 4px;
+	padding-left: 27px;
+	font-size: 15px;
+	line-height: 27px;
+	color: #404040;
+	cursor: pointer;
+}
+.main-contact-form .radio:last-child,
+.main-contact-form .checkbox:last-child {
+	margin-bottom: 0;
+}
+.main-contact-form .radio input,
+.main-contact-form .checkbox input {
+	position: absolute;
+	left: -9999px;
+}
+.main-contact-form .radio i,
+.main-contact-form .checkbox i {
+	position: absolute;
+	top: 5px;
+	left: 0;
+	display: block;
+	width: 13px;
+	height: 13px;
+	outline: none;
+	border-width: 2px;
+	border-style: solid;
+	background: #fff;
+}
+.main-contact-form .radio i {
+	border-radius: 50%;
+}
+.main-contact-form .radio input + i:after,
+.main-contact-form .checkbox input + i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+.main-contact-form .radio input + i:after {
+	content: '';
+	top: 4px;
+	left: 4px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+}
+.main-contact-form .checkbox input + i:after {
+	content: '\f00c';
+	top: -1px;
+	left: -1px;
+	width: 15px;
+	height: 15px;
+	font: normal 12px/16px FontAwesome;
+	text-align: center;
+}
+.main-contact-form .radio input:checked + i:after,
+.main-contact-form .checkbox input:checked + i:after {
+	opacity: 1;
+}
+.main-contact-form .inline-group {
+	margin: 0 -30px -4px 0;
+}
+.main-contact-form .inline-group:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.main-contact-form .inline-group .radio,
+.main-contact-form .inline-group .checkbox {
+	float: left;
+	margin-right: 30px;
+}
+.main-contact-form .inline-group .radio:last-child,
+.main-contact-form .inline-group .checkbox:last-child {
+	margin-bottom: 4px;
+}
+
+/* form buttons */
+.main-contact-form .button {
+	float: right;
+	height: 39px;
+	overflow: hidden;
+	margin: 10px 0 0 20px;
+	padding: 0 25px;
+	outline: none;
+	border: 0;
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+/* grid */
+.main-contact-form .row {
+	margin: 0 -15px;
+}
+.main-contact-form .row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.main-contact-form .col {
+	float: left;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.main-contact-form .col-1 {
+	width: 8.33%;
+}
+.main-contact-form .col-2 {
+	width: 16.66%;
+}
+.main-contact-form .col-3 {
+	width: 25%;
+}
+.main-contact-form .col-4 {
+	width: 33.33%;
+}
+.main-contact-form .col-5 {
+	width: 41.66%;
+}
+.main-contact-form .col-6 {
+	width: 50%;
+}
+.main-contact-form .col-8 {
+	width: 66.67%;
+}
+.main-contact-form .col-9 {
+	width: 75%;
+}
+.main-contact-form .col-10 {
+	width: 83.33%;
+}
+@media screen and (max-width: 600px) {
+	.main-contact-form .col {
+		float: none;
+		width: 100%;
 	}
 }
+
+
+
+/**/
+/* normal state */
+/**/
+.main-contact-form {
+	width: 60%;
+	margin: 0 auto;
+}
+.main-contact-form .input input,
+.main-contact-form .select select,
+.main-contact-form .textarea textarea,
+.main-contact-form .radio i,
+.main-contact-form .checkbox i {
+	border-color: #e5e5e5;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+}
+.main-contact-form .button {
+	background-color: #dc9596;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+}
+.main-contact-form .button.button-secondary {
+	background-color: #b3b3b3;
+}
+
+
+/**/
+/* hover state */
+/**/
+.main-contact-form .input:hover input,
+.main-contact-form .select:hover select,
+.main-contact-form .textarea:hover textarea,
+.main-contact-form .radio:hover i,
+.main-contact-form .checkbox:hover i {
+	border-color: #dc9596;
+}
+.main-contact-form .button:hover {
+	opacity: 1;
+}
+
+
+/**/
+/* focus state */
+/**/
+.main-contact-form .input input:focus,
+.main-contact-form .select select:focus,
+.main-contact-form .textarea textarea:focus,
+.main-contact-form .radio input:focus + i,
+.main-contact-form .checkbox input:focus + i {
+	border-color: #dc9596;
+}
+
+
+/**/
+/* checked state */
+/**/
+.main-contact-form .radio input + i:after {
+	background-color: #dc9596;	
+}
+.main-contact-form .checkbox input + i:after {
+	color: #dc9596;
+}
+.main-contact-form .radio input:checked + i,
+.main-contact-form .checkbox input:checked + i {
+	border-color: #dc9596;	
+}
+
+/**/
+/* error state */
+/**/
+.main-contact-form .state-error input,
+.main-contact-form .state-error select,
+.main-contact-form .state-error textarea,
+.main-contact-form .radio.state-error i,
+.main-contact-form .checkbox.state-error i {
+	background: #fff0f0;
+}
+.main-contact-form .state-error select + i {
+	background: #fff0f0;
+	box-shadow: 0 0 0 12px #fff0f0;
+}
+.main-contact-form .state-error + em {
+	display: block;
+	margin-top: 6px;
+	padding: 0 1px;
+	font-style: normal;
+	font-size: 11px;
+	line-height: 15px;
+	color: #ee9393;
+}
+
+
+/**/
+/* success state */
+/**/
+.main-contact-form .state-success input,
+.main-contact-form .state-success select,
+.main-contact-form .state-success textarea,
+.main-contact-form .radio.state-success i,
+.main-contact-form .checkbox.state-success i {
+	background: #f0fff0;
+}
+.main-contact-form .state-success select + i {
+	background: #f0fff0;
+	box-shadow: 0 0 0 12px #f0fff0;
+}
+
+.main-contact-form .note-success {
+	color: #6fb679;
+}
+
+
+/**/
+/* disabled state */
+/**/
+.main-contact-form .input.state-disabled input,
+.main-contact-form .select.state-disabled,
+.main-contact-form .textarea.state-disabled,
+.main-contact-form .radio.state-disabled,
+.main-contact-form .checkbox.state-disabled,
+.main-contact-form .button.state-disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+.main-contact-form .input.state-disabled:hover input,
+.main-contact-form .select.state-disabled:hover select,
+.main-contact-form .textarea.state-disabled:hover textarea,
+.main-contact-form .radio.state-disabled:hover i,
+.main-contact-form .checkbox.state-disabled:hover i {
+	border-color: #e5e5e5;
+}
+
+
+/**/
+/* submited state */
+/**/
+.main-contact-form .message {
+	display: none;
+	color: #6fb679;
+}
+.main-contact-form .message i {
+	display: block;
+	margin: 0 auto 20px;
+	width: 81px;
+	height: 81px;
+	border: 1px solid #6fb679;
+	border-radius: 50%;
+	font-size: 30px;
+	line-height: 81px;
+}
+.main-contact-form.submited fieldset,
+.main-contact-form.submited footer {
+	display: none;
+}
+.main-contact-form.submited .message {
+	display: block;
+	padding: 25px 30px;
+	background: rgba(255,255,255,.9);
+	font: 300 18px/27px 'Open Sans', Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+
+
+
+/* Map section */
 
 .section-map {
 	padding: 30px 0 0;
