@@ -3,22 +3,14 @@
 *::before {
     margin: 0;
     padding: 0;
-    /* to not have borders added to height and width */
-    box-sizing: inherit; 
+    box-sizing: inherit;
 }
 
-/* we set this to use the rem later, default browser font size: 16px, we want to set % to let user change it  */
 html {
+    // This defines what 1rem is
     font-size: 62.5%;
 }
 
 body {
-    font-family: 'Mukta Mahee', sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 1.7;
-    color: $color-grey;
-    padding: 3rem;
-    position: relative;
     box-sizing: border-box;
 }
